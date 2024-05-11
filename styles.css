@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+
+/* colors */
+:root {
+    --color-phthalo-blue: rgb(0, 13, 129);
+    --color-lavender: rgb(210, 218, 239);
+    --color-night: rgb(18, 19, 15);
+    --color-powder-blue: rgb(164, 194, 223);
+    --color-white: rgba(255, 255, 255, 0.969);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    /* background-color:var(--color-white); */
+    box-sizing: border-box;    /* width includes padding and border */
+    font-family: "Noto Serif", sans-serif;
+}
+
+/* body {
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-size: 18px;
+} */
+
+h1 {
+    font-weight: lighter;
+}
+
+a {
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    padding: 20px 100px;
+    background-color: var(--color-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s;
+    z-index: 100;
+}
+
+.header * {
+    background-color: transparent;    /* change bg-color of elements withtin the header */
+}
+
+.logo {
+    width: 190px;
+    height: auto;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 20px;
+    color: var(--color-night);
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+}
+
+
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content a {
+    font-size: 18px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(85, 85, 85);
+    min-width: 160px;
+    z-index: 1;
+}
+  
+.dropdown-content a {
+    color: var(--color-white);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(119, 119, 119);
+}
+  
+.nav-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    border-radius: 5px;
+    background-color: var(--color-phthalo-blue);
+    transition: 0.3s;
+}
+
+.navbar a.active::before,
+.navbar a:hover::before {
+    width: 100%
+}
+
+.cover {
+    position: relative;
+    width: 100%;
+}
+
+.cover-image {
+    width: 100%;
+}
+
+.cover-text {
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-white);
+    text-align: center;
+}
+
+.cover-title {
+    font-size: 78px;
+}
+
+/* .sub-text {
+    font-size: 20px;
+    margin-top: 20px;
+    opacity: 0.7;
+} */
+
+.button {
+    color: var(--color-white);
+    padding: 10px 20px;
+    background-color: var(--color-phthalo-blue);
+    border: none;
+    font-size: 18px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: var(--color-powder-blue);
+    color: var(--color-night);
+    /* background-color: rgba(0, 13, 129, 0.7); */
+    transition: 0.3s;
+}
+
+.button:active {
+    transform: scale(0.96)
+}
+
+.image-container {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.responsive-image {
+    width: 100%;
+    height: auto;
+}
+
+.card {
+    margin: 30px;
+    width: 300px;
+    background-color: var(--color-white);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: transform 0.5s;
+}
+  
+.card-image {
+    width: 100%;
+    height: auto;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.card-description {
+    font-size: 18px;
+    color: rgb(119, 119, 119);
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.developer-bar {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-night);
+    color: var(--color-white);
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+}

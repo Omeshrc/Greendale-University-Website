@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="main.js"></script> <!--Created for student 2-->
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; 
+        margin: 0; 
+        margin-top: 15vh;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+        transition: background-color 0.3s ease-in-out; /*Animation*/
+      }
+      
+      .banner img{
+        width: 240px;
+        height: auto;
+      }
+
+      .thumbnails {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content:center;
+        background-color: #12130f;
+      }
+
+      .thumbnail {
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        width: 200px;
+        height: 150px;
+        transition: transform 0.3s ease-in-out; /*Animation*/
+      }
+
+      .thumbnail img {
+        width: 100%;
+        height: 100%;
+        transition: transform 0.3s ease-in-out; /*Animation*/
+      }
+
+      .thumbnail:hover {
+        transform: scale(1.1);
+      }
+
+      .thumbnail:hover .image-overlay h3 {
+        opacity: 1;
+      }
+
+      .image-overlay {
+        width: 100%;
+        height: 100%;
+        background-color: unset;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out; /*Animation*/
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      h1 {
+        text-align: center;
+        background-color: unset;
+      }
+
+ 
+
+      .color-theme-btn {
+        margin-top: 20px;
+        background-color: unset;
+      
+      }
+
+      .color-theme-btn label {
+        margin-right: 10px;
+        background-color: unset;
+      
+      }
+
+      .banner {
+        position: fixed;
+        top: 50%;
+        right: 0;
+        width: 400px;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        padding: 20px;
+        transform: translateX(100%) translateY(-50%);
+        transition: transform 0.3s ease-in-out;
+        display: flex;
+        z-index: 101;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        
+      }
+
+      .banner.open { /* Animation for pop up*/
+        transform: translateX(0) translateY(-50%);
+      }
+
+      .banner img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+      }
+
+      .light-mode { /* Color themes*/
+        background-color: #f1f1f1;
+        color: #000;
+      }
+
+      .light-mode .container {
+        background-color: #fff;
+      }
+
+      .dark-mode {
+        background-color: #1f1f1f;
+        color: #fff;
+      }
+
+      .dark-mode .container {
+        background-color: #2f2f2f;
+      }
+
+      .abstract-mode {
+        background-color: #7048e8;
+        color: #fff;
+      }
+
+      .abstract-mode .container {
+        background-color: #9966ff;
+      }
+
+      .font-size-select {
+        margin-top: 20px;
+      }
+
+      .font-size-select label {
+        margin-right: 50px;
+      }
+
+      .navy-blue-mode {
+        background-color: #1a1a2e;
+        color: #fff;
+      }
+
+      .navy-blue-mode .container {
+        background-color: #0f3460;
+      }
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px; 
+        background-color: unset;
+      }
+      body.small { /*Font sizes to be selected*/
+        font-size: 14px;
+      }
+
+      body.medium {
+        font-size: 16px;
+      }
+
+      body.large {
+        font-size: 18px;
+      }
+      footer {
+      background-color: rgb(18, 19, 15);
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      margin-top: auto; 
+    }
+    footer a {
+      color: white;
+      background-color: unset;
+    }
+    
+    </style>
+  </head>
+  <body class="medium">
+    <header class="header">
+      <a href="index.html"><img src="images/logo.png" alt="logo" class="logo"></a>
+
+      <nav class="navbar">
+          <a href="index.html">Home</a>
+          <a href="About-Us.html">About</a>
+          <a href="cart.html">Courses</a>
+          <div class="nav-dropdown">
+              <a class="active" href="#">Campus</a>
+              <div class="dropdown-content">
+                <a href="clubs-page.html">Societies</a>
+                <a href="sportspage.html">Sports</a>
+                <a href="facilities.html">Facilities</a>
+                <a href="alumni.html">Alumni</a>
+                <a class="active" href="thumbnail.html">Explore</a>
+              </div>
+          </div>
+          <a href="Quiz-Page.html">Quiz</a>
+          <a href="feedback.html">Feedback</a>
+          <a href="sitemap.html">Site Map</a>
+      </nav>
+  </header>
+    <h1>Explore</h1>
+
+    
+
+    <div class="container" style="font-size: medium">
+      <div class="thumbnails">
+        <div class="thumbnail">
+          <img src="Thumbnail/lotus-towwer.jpg" alt="Thumbnail 1">
+          <div class="image-overlay">
+            <h3>Lotus Tower</h3> <!--Thumbnail title and details will only appear when user hovers over specific thumbnail-->
+            <p>
+              One of the city's newest activities is also one of the tallest
+              locations to visit in Colombo. A walk to the top of
+              the Colombo Lotus Tower, the highest freestanding building in
+              South Asia (368 meters/1,168 ft), rewards tourists with
+              unrestricted views of Colombo and the surrounding cityscape and
+              sea. An e-sports arena, a 5G VR Innovation Centre, a shopping mall,
+               a rotating fine dining restaurant, indoor and
+              outdoor viewing places, and a lot of telecoms equipment are all
+              housed in the tower.It is coated in LED lighting and every evening,
+              it produces illumination displays with seasonal themes.
+            </p>
+          </div>
+        </div>
+
+        <div class="thumbnail">
+          <img
+            src="Thumbnail/sri-lanka-colombo-best-places-to-visit-national-museum-colombo.jpg"
+            alt="Thumbnail 2"
+          >
+          <div class="image-overlay">
+            <h3>Sri Lanka National Museum</h3>
+            <p>
+              The Sri Lanka National Museum, also known as the National Museum
+              of Colombo, is the country's official museum and will take you on
+              a trip through thousands of years of Sri Lankan culture. One of
+              those museums with a variety of media, including art and
+              artefacts, clothes, jewellery, coins, weapons, and handicrafts.
+              The exhibits depict the nation's natural and cultural legacy in
+              chronological order, beginning with prehistory and ending in the
+              present. The governor of the island, which was then a British
+              colony known as Ceylon, established the Sri Lanka National Museum
+              in 1877 during the colonial era.
+            </p>
+          </div>
+        </div>
+
+        <div class="thumbnail">
+          <img
+            src="Thumbnail/sri-lanka-colombo-best-places-to-visit-viharamahadevi-park.jpg"
+            alt="Thumbnail 3"
+          >
+          <div class="image-overlay">
+            <h3>Viharamahadevi Park</h3>
+            <p>
+              This enormous green area serves as Colombo's Central Park (and one
+              of the city's only significant open spaces) and offers places to
+              unwind and take in (or flee from) the sunshine. The park was once
+              known as Victoria Park and is now dubbed after one of the nation's
+              historic monarchs. Between City Hall and the National Museum of
+              Colombo is Viharamahadevi Park. The park has a small zoo and a lot
+              of fountains. The playground will be fun for kids. You may go to
+              the Columbo Public Library and the Cenotaph War Memorial, both of
+              which are situated in the park. The tallest cast brass Buddha
+              statue in the nation, at 15 feet tall, can be seen in the park.
+            </p>
+          </div>
+        </div>
+
+        <div class="thumbnail">
+          <img
+            src="Thumbnail/sri-lanka-colombo-best-places-to-visit-national-zoological-gardens-sri-lanka.jpg"
+            alt="Thumbnail 4"
+          >
+          <div class="image-overlay">
+            <h3>Dehiwala Zoological Gardens</h3>
+            <p>
+              The expansive Colombo Zoo of the city is situated in the Dehiwala
+              region and was once known as the Dehiwala Zoological Gardens. The
+              zoo prioritises education, animal conservation, and care in
+              addition to housing animals in cages. It is one of Asia's oldest
+              zoos and is home to around 3,000 different species of animals of
+              various sizes and kinds. The zoo hosts daily presentations with
+              the caretakers of different animals.
+            </p>
+          </div>
+        </div>
+
+        <div class="thumbnail">
+          <img src="Thumbnail/mahinda-pokuna.jpg" alt="Thumbnail 5" >
+          <div class="image-overlay">
+            <h3>Nelum Pokuna Mahinda Rajapaksa Theatre</h3>
+            <p>
+              A broad variety of musical, dance, and cultural activities are
+              presented in this sizable, contemporary performing arts centre.
+              The name "Nelum Pokuna" in the native
+              Sinhala language, which means lotus pond, is a deliberate
+              reference to the lotus flower, as are many other things in Sri
+              Lanka. The Nelum Pokuna Mahinda Rajapaksa Theatre's schedule
+              consists of opera (Chinese, Sri Lankan, and Western) and symphonic
+              events. They also do contemporary pop concerts. There are
+              performances in both the main auditorium and the outside
+              amphitheatre. The theatre is located in the heart of Colombo, next
+              to Viharamahadevi Park.
+            </p>
+          </div>
+        </div>
+
+        <div class="thumbnail">
+          <img
+            src="Thumbnail/sri-lanka-colombo-best-places-to-visit-mount-lavinia-beach.jpg"
+            alt="Thumbnail 6"
+          >
+          <div class="image-overlay">
+            <h3>Mount Lavinia Beach</h3>
+            <p>
+              Mount Lavinia, the primary seaside tourist town in Sri Lanka, is a
+              Colombo suburb. It might be an excellent option to staying in the
+              city because there are so many hotels here. It's a simple
+              30-minute drive (or a 15-minute rail journey) from downtown
+              Colombo and a wonderful place to spend an hour or a few days. The
+              main beach section, sometimes referred to as the "Golden Mile," is
+              lined with establishments catering to tourists and has a thriving
+              nightlife. By staging an annual Rainbow Kite Festival in June with
+              a Pride-themed theme, Mount Lavinia has gained recognition as a
+              place that is LGBTQ+-friendly.
+            </p>
+          </div>
+        </div>
+
+        <div class="thumbnail">
+          <img src="Thumbnail/nationalmusueams.jpg" alt="Thumbnail 7" >
+          <div class="image-overlay">
+            <h3>National Museum of Natural History</h3>
+            <p>
+              The Colombo National Museum is immediately around the corner from
+              the National Museum of Natural History.Only those
+              species of plants, insects, fish, amphibians, and mammals that are
+              native to the nation are on display. Many of the exotic creatures
+              displayed are in danger of going extinct. In addition to
+              vegetation, there are other exhibits of rocks and minerals,
+              including some that are indigenous to the island. There are
+              fossilised skeletons of old and extinct organisms, including
+              dinosaurs, in addition to the animals and vegetation.
+            </p>
+          </div>
+        </div>
+
+        <div class="thumbnail">
+          <img src="Thumbnail/gangaramatempple.jpg" alt="Thumbnail 8" >
+          <div class="image-overlay">
+            <h3>Gangaramaya Temple</h3>
+            <p>
+              The late 19th century saw the construction of this complex of
+              Buddhist temples. The temple serves as a place of worship and a
+              resource for learning about Buddhism. It resembles a museum in
+              that it displays a variety of tangible objects, including
+              jewellery, coins, and even a vintage Rolls-Royce. A lock of the
+              Buddha's hair and the sacred tree around which the temple was
+              constructed are also on display, together with other revered
+              religious artefacts. Visit the Gangaramaya Temple during the
+              February full moon (known as "Poya") to witness the yearly vibrant
+              religious ritual that features a parade led by the temple's
+              elephant. The temple complex is located next to Bere Lake in the
+              heart of Colombo.
+            </p>
+          </div>
+        </div>
+
+        <div class="thumbnail">
+          <img src="Thumbnail/dutch.jpg" alt="Thumbnail 9" >
+          <div class="image-overlay">
+            <h3>Colombo Dutch Museum</h3>
+            <p>
+              The Colombo Dutch Museum has a wealth of information on the
+              history and influence of the Dutch on the island. Along with
+              weapons and militaria, the collection also consists of art,
+              furniture, and artefacts. Information is available in English. The
+              museum building was constructed in the late 17th century to serve
+              as the Dutch governor's formal house. The collection focuses on
+              the nearly 200-year span, from 1640 to 1796, of Dutch rule over
+              the island's coastal regions. Due to its location on one of the
+              vital east-west shipping lanes used by the Dutch East India
+              Company, the island, then known as Ceylon, played a significant
+              role in Holland's international trade.
+            </p>
+          </div>
+        </div>
+
+        <div class="thumbnail">
+          <img src="Thumbnail/floatingmarket.jpg" alt="Thumbnail 10" >
+          <div class="image-overlay">
+            <h3>Pettah Floating Market</h3>
+            <p>
+              This Colombo neighbourhood was transformed from an industrial area
+              about 2000 into a flourishing floating market with close to 100
+              sellers. Pettah is located in the heart of Colombo, a short drive
+              from Fort. The canal where the floating market is located is
+              bordered by wooden boardwalks and sidewalks. They surround and
+              span the canal, giving it a pleasant place to wander, shop, and
+              people-watch. Additionally, the local street food is excellent. A
+              fruit and vegetable market is also present. You may purchase items
+              like clothing, jewellery, crafts, and even gadgets like phones.
+              The Pettah Floating Market is open from 8 am to 8 pm; around 5 pm
+              is a fantastic time to visit and take pictures.
+            </p>
+          </div>
+        </div>
+
+        <div class="thumbnail">
+          <img src="Thumbnail/railwaymusueam.jpg" alt="Thumbnail 11" >
+          <div class="image-overlay">
+            <h3>National Railway Museum</h3>
+            <p>
+              This outdoor museum is located in Central Colombo, close to the
+              major Maradana Railway Station, and is a must-see for train
+              enthusiasts and trainspotters. The old National Railway Museum in
+              Colombo includes a decent collection of carriages, rolling
+              equipment, and locomotives, including numerous steam engines.
+              However, the larger National Railway Museum is located at
+              Kadugannawa, close to Kandy. Everyday from 9 a.m. to 4 p.m., the
+              museum is open; it is closed on holidays.
+            </p>
+          </div>
+        </div>
+
+        <div class="thumbnail">
+          <img src="Thumbnail/Galle-Face-Green.jpg" alt="Thumbnail 12" >
+          <div class="image-overlay">
+            <h3>Galle Face Green</h3>
+            <p>
+              Many Sri Lankans visit this sizable, coastal park area to enjoy
+              the beach. The park is located right in the middle of Colombo,
+              close to the Fort district, between Galle Road and the Indian
+              Ocean. It contains 500 metres of shoreline and is the biggest open
+              area in the city. Additionally, it features a beachside promenade
+              lined with shops. Due to the hot weather, Colombo is also a
+              well-liked destination for nightlife; Saturday and Sunday evenings
+              are the ideal times to go. You may dine on the beach, wade in the
+              ocean, or sail a kite in the constant breeze. It's a fantastic
+              spot for running and is enjoyable for families.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="banner"> <!-- For pop-up-->
+      
+     
+      <img src="cover.jpg" alt="Banner Image" >
+      <h3 style="background-color: unset">Image Title</h3>
+      <p style="background-color: unset">Image description</p>
+    </div>
+
+    <div class="center">
+      <div class="color-theme-btn"> <!-- Radio for users to switch through themes-->
+        <input type="radio" name="color-theme" id="light-mode" >
+        <label for="light-mode">Light Mode</label>
+        <input type="radio" name="color-theme" id="dark-mode" >
+        <label for="dark-mode">Dark Mode</label>
+        <input type="radio" name="color-theme" id="abstract-mode" >
+        <label for="abstract-mode">Abstract Mode</label>
+        <input type="radio" name="color-theme" id="navy-blue-mode" >
+        <label for="navy-blue-mode">Navy Blue Mode</label>
+
+        <label for="font-size">Font Size:</label> <!--drop down for user to select font sizes-->
+        <select id="font-size">
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+        </select>
+
+        <button id="reset-btn">Reset</button>
+      </div>
+    </div>
+    <footer>&copy; <a href="developer-inoj.html">Developer</a></footer>
+
+    <script>
+      const thumbnails = document.querySelectorAll(".thumbnail");  /*Selection of elements*/
+      const banner = document.querySelector(".banner");
+      const lightModeBtn = document.getElementById("light-mode");
+      const darkModeBtn = document.getElementById("dark-mode");
+      const abstractModeBtn = document.getElementById("abstract-mode");
+      const navyBlueModeBtn = document.getElementById("navy-blue-mode");
+      const fontSizeSelect = document.getElementById("font-size");
+      const body = document.querySelector("body");
+      const container = document.querySelector(".container");
+
+      const resetBtn = document.getElementById("reset-btn"); /* Function to reload page*/
+      resetBtn.addEventListener("click", function () {
+        location.reload(); 
+      });
+
+      lightModeBtn.addEventListener("click", function () { /*when selected the theme is added to the body and the rest is removed*/
+        body.classList.remove("dark-mode", "abstract-mode", "navy-blue-mode");
+        body.classList.add("light-mode");
+        container.style.backgroundColor = "#fff";
+      });
+
+      darkModeBtn.addEventListener("click", function () {
+        body.classList.remove("light-mode", "abstract-mode", "navy-blue-mode");
+        body.classList.add("dark-mode");
+        container.style.backgroundColor = "#2f2f2f";
+      });
+
+      abstractModeBtn.addEventListener("click", function () {
+        body.classList.remove("light-mode", "dark-mode", "navy-blue-mode");
+        body.classList.add("abstract-mode");
+        container.style.backgroundColor = "#9966ff";
+      });
+
+      navyBlueModeBtn.addEventListener("click", function () {
+        body.classList.remove("light-mode", "dark-mode", "abstract-mode");
+        body.classList.add("navy-blue-mode");
+        container.style.backgroundColor = "#0f3460";
+      });
+
+      fontSizeSelect.addEventListener("change", function () { /*Function to change font to specification chosed by user*/
+        const selectedOption = this.value;
+        body.className = selectedOption;
+      });
+
+      thumbnails.forEach(function (thumbnail) { /*Funtion for mouse enter and mouseleave to pop up the banner*/
+        thumbnail.addEventListener("mouseenter", function () {
+          const image = this.querySelector("img");
+          const title = this.querySelector("h3");
+          const description = this.querySelector("p");
+
+          image.style.opacity = "0";
+          title.style.opacity = "1";
+
+          banner.querySelector("img").src = image.src;
+          banner.querySelector("h3").textContent = title.textContent;
+          banner.querySelector("p").textContent = description.textContent;
+          banner.classList.add("open");
+        });
+
+        thumbnail.addEventListener("mouseleave", function () {
+          const image = this.querySelector("img");
+          const title = this.querySelector("h3");
+
+          image.style.opacity = "1";
+          title.style.opacity = "0";
+
+          banner.classList.remove("open");
+        });
+      });
+    </script>
+  </body>
+</html>

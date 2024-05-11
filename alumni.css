@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+
+* {
+    font-family: "Noto Serif", sans-serif;
+}
+
+body{
+    font-size: 15px;
+}
+
+a img {
+    width: 2.5%;
+    height: 2.5%;
+    float: right; 
+    border: 1.5px solid white;
+}
+
+.card {
+    border: 2px solid rgb(4, 125, 246);
+    display: inline-block;
+    margin: 70px;
+    width: 600px;
+    border: 6px solid rgba(4, 79, 199, 0.927);
+}
+
+#alumniback {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("your-image-url.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.developer-bar a{
+    color: white;
+}
+
+.cover a:hover {
+    color: yellow; /* Color to be applied when hovering over the link */
+  }
+
+
+  

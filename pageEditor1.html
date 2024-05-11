@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
+        * {
+            font-family: 'Comic Neue', cursive;
+        }
+
+        body {
+            background-color: darkcyan;
+            color: white;
+        }
+
+        h1,h3 {
+            text-align: center;
+            font-size: 30px;
+            padding-bottom: 20px;
+            padding-top: 20px;
+        }
+
+        h4 {
+            text-align: center;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            border: 2px solid black;
+        }
+
+        p {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .lift:hover {
+            transform: translateY(-10px);
+	        transition: transform 0.5s;
+        }
+
+        a:hover {
+            color: white; /* Color to be applied when hovering over the link */
+        }
+
+        a img {
+            width: 2%;
+            height: 2%;
+            float: right; 
+            border: 1.5px solid white;
+        }
+
+        .intro {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font-size: 20px;
+            color: black;
+            text-align: center;
+            background-color:cornflowerblue;
+            width: 50%;
+            margin: 1% auto;
+            border: 2px solid black;
+        }
+
+        .content1 {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 23px;
+            color: black;
+            text-align: center;
+            background-color: coral;
+            width: 50%;
+            margin: 1% auto;
+            border: 2px solid black;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+            align-items: stretch;
+        }
+
+        .content {
+            display: inline-block;
+            padding: 10px;
+            font-size: 20px;
+            color: black;
+            text-align: center;
+            background-color: coral;
+            width: 250px;
+            margin: 10px;
+            padding-bottom: 40px;
+            border: 2px solid black;
+        }
+
+        .one {
+            padding-top: 120px;
+        }
+
+        .two {
+            padding-top: 50px;
+        }
+
+        .three {
+            padding-top: 8px;
+        }
+
+        .four {
+            padding-top: 121px;
+        }
+
+    </style>
+</head>
+<body id = "bktop">
+    <h1><u>Your Friendly Page Editor!</u></h1>
+    <img src="Images/1.png" alt="Student_1_Omesh"><br>
+
+    <div class="intro">
+        <h4><u>Student 01</u></h4>
+        <h3>Student Name - Omesh Randil Chandrapala<br>
+            IIT Number - 20220209 <br>
+            UoW Number - w1999419</h3>
+    </div>
+    <br>
+
+    <div class="content1">
+        <u><b>The following pages were created and designed by me!</b></u>
+    </div>
+    <br>
+
+    <div class="container">
+        <div class = "lift">
+        <div class="content">
+            <br><br>
+            <h4><u>The Presentation page</u></h4><br><br>
+            <p>I have created a splash screen as a Presentation Page, using CSS and Javascript for Animations and Transitions.</p>
+            <div class = "one"><a href="presentationPage.html">Click Me to go to the Presentation Page!</a></div>
+        </div>
+    </div>
+    
+        <div class = "lift">
+        <div class="content">
+            <br><br>
+        <h4><u>The Shopping Cart</u></h4><br><br>
+            <p>I have created a Shopping Cart where online courses offered by our university could be purchased. Used HTML for Layout, CSS for designing and Javascript for validation and interactivity.</p>
+            <div class = "two"><a href="cart.html">Click Me to go to the Shopping Cart!</a></div>
+        </div>
+    </div>
+
+        <div class = "lift">
+        <div class="content">
+            <br><br>
+        <h4><u>The Checkout Page</u></h4><br><br>
+            <p>I have created a Checkout/ Payments Page as a follow-up for the Shopping Cart Page. It contains HTML for inputs, CSS for alignment and Javascript for interactivity, security and validation. Has links to navigate to various parts of the page, as required.</p>
+            <div class = "three"><a href="checkOut.html">Click Me to go to the Check Out Page!</a></div>
+        </div>
+    </div>
+
+        <div class = "lift">
+        <div class="content">
+            <br><br>
+        <h4><u>Alumni Page</u></h4><br><br>
+            <p>I have created an additional page as per the Specifications. Contains a basic HTML Structure and CSS Designs. </p>
+            <div class = "four"><a href="alumni.html">Click Me to go to the Alumni Page!</a></div>
+        </div>
+    </div>
+    </div>
+    <a href = "#bktop"><img src = "images/bktop.jpeg" alt = "backtotop"></a>
+
+</body>
+</html>

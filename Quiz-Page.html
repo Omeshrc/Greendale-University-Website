@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Complete the quiz</title>
+		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="quiz-page.css">
+		<script src="main.js"></script>
+	</head>
+	<body>
+		<header class="header">
+			<a href="index.html"><img src="images/logo.png" alt="logo" class="logo"></a>
+	
+			<nav class="navbar">
+				<a href="index.html">Home</a>
+				<a href="About-Us.html">About</a>
+				<a href="cart.html">Courses</a>
+				<div class="nav-dropdown">
+					<a href="#">Campus</a>
+					<div class="dropdown-content">
+					  <a href="clubs-page.html">Societies</a>
+					  <a href="sportspage.html">Sports</a>
+					  <a href="facilities.html">Facilities</a>
+					  <a href="alumni.html">Alumni</a>
+					  <a href="thumbnail.html">Explore</a>
+					</div>
+				</div>
+				<a class="active" href="Quiz-Page.html">Quiz</a>
+				<a href="feedback.html">Feedback</a>
+				<a href="sitemap.html">Site Map</a>
+			</nav>
+		</header>
+		<div class="para"><!--container for the main instructions-->
+			<h1>Put Your Knowledge Into Test!</h1>
+			<p>Hello! Are you ready to stand a chance to get amazing offers at Greendale University? Answer the following IQ test under one minute.<br><br>Instructions are as follows:</p>
+			<ul style="margin:2% 4%">
+				<li> You have 1 minute to answer all questions and the timer starts when you click the start button.</li>
+				<li> Each question evaluvates different sectors of your IQ and you get only one chance at answering each question.</li>
+				<li> The answer gets locked in once you click Enter button.</li>
+				<li> Once you are done with all the questions click Finish to stop the clock and to see your results.</li>
+			</ul>
+			<p>let's see if you can answer all questions. Good Luck!</p>	
+		</div>
+		<form>
+			<input type="button" class="strtFinBtn" id="start" name="start" value="Start" onmouseup="countdown( 'ten-countdown', 1, 0 );document.getElementById('Finish').disabled=false;"><br><br>
+			<div class="card"><!-- container for the question-->
+				<span id="question1">1. Mary is 16 years old. She is 4 times older than her brother. How old will Mary be when she is twice his age? </span>
+				<br>
+				<div class="answers" id="answers1"><!--container for answers-->
+						<label for="That's-impossible" id="answer10">
+							<input type="radio" id="That's-impossible" name="answers1" value="That's impossible">
+							That's impossible
+						</label>
+						<label for="20" id="answer11">
+							<input type="radio" id="20" name="answers1" value="20">
+							20
+						</label>
+						<label for="24" id="answer12">
+							<input type="radio" id="24" name="answers1" value="24">
+							24
+						</label>
+						<label for="28" id="answer13">
+							<input type="radio" id="28" name="answers1" value=" 28">
+							28
+						</label>
+						<input type="button" name="enter" value="Enter" onmouseup="getArrayValues(this.form.answers1,answer[0],1);">
+				</div>
+			</div>	
+				
+			<div class="card">	
+				<span id="question2">2. Which fraction is the biggest? </span>
+				<br>
+				<div class="answers" id="answers2">
+						<label for="3/5" id="answer20">
+						<input type="radio" id="3/5" name="answers2" value="3/5">
+						3/5</label>
+						<label for="5/8" id="answer21">
+						<input type="radio" id="5/8" name="answers2" value="5/8">
+						5/8</label>
+						<label for="1/2" id="answer22">
+						<input type="radio" id="1/2" name="answers2" value="1/2">
+						1/2</label>
+						<label for="4/7" id="answer23">
+						<input type="radio" id="4/7" name="answers2" value="4/7">
+						4/7</label>
+						<input type="button" name="enter" value="Enter" onclick="getArrayValues(this.form.answers2,answer[1],2);">
+				</div>
+			</div>	
+				
+			<div class="card">
+				<span id="question3">3. The store reduces the price of one product by 20 percent. How many percent do you need to raise to the percentage to get the original price?</span>
+				<br>
+				<div class="answers" id="answers3">
+						<label for="25%" id="answer30">
+						<input type="radio" id="25%" name="answers3" value="25">
+						25%</label>
+						<label for="27%" id="answer31">
+						<input type="radio" id="27%" name="answers3" value="27">
+						27%</label>
+						<label for="30%" id="answer32">
+						<input type="radio" id="30%" name="answers3" value="30">
+						30%</label>
+						<label for="35%" id="answer33">
+						<input type="radio" id="35%" name="answers3" value="35">
+						35%</label>
+						<input type="button" name="enter" value="Enter" onclick="getArrayValues(this.form.answers3,answer[2],3);">
+				</div>
+			</div>	
+				
+			<div class="card">
+				<span id="question4">4. There are 5 machines that make 5 parts in 5 minutes. How long does it take to make 100 parts on 100 machines? </span>
+				<br>
+				<div class="answers" id="answers4">
+						<label for="5" id="answer40">
+						<input type="radio" id="5" name="answers4" value="5">
+						5</label>
+						<label for="10" id="answer41">
+						<input type="radio" id="10" name="answers4" value="10">
+						10</label>
+						<label for="15" id="answer42">
+						<input type="radio" id="15" name="answers4" value="15">
+						15</label>
+						<label for="30" id="answer43">
+						<input type="radio" id="30" name="answers4" value="30">
+						30</label>
+						<input type="button" name="enter" value="Enter" onclick="getArrayValues(this.form.answers4,answer[3],4);">
+				</div>
+			</div>	
+				
+			<div class="card">	
+				<span id="question5">6. A car travels at a speed of 40 mph over a certain distance and then returns over the same distance at a speed of 60 mph. What is the average speed for the total journey?</span>
+				<br>
+				<div class="answers" id="answers5">
+						<label for="30mph" id="answer50">
+						<input type="radio" id="30mph" name="answers5" value="30 mph">
+						30 mph</label>
+						<label for="40mph" id="answer51">
+						<input type="radio" id="40mph" name="answers5" value="40 mph">
+						40 mph</label>
+						<label for="60mph" id="answer52">
+						<input type="radio" id="60mph" name="answers5" value="60 mph">
+						60 mph</label>
+						<label for="48mph" id="answer53">
+						<input type="radio" id="48mph" name="answers5" value="48 mph">
+						48 mph</label>
+						<input type="button" name="enter" value="Enter" onclick="getArrayValues(this.form.answers5,answer[4],5);">
+				</div>
+			</div>	
+				
+			<div class="card">
+				<span id="question6">6.Which day is three days before the day immediately following the day two days before the day three days after the day immediately before Friday?</span>
+				<br>
+				<div class="answers" id="answers6">
+						<label for="Tuesday" id="answer60">
+						<input type="radio" id="Tuesday" name="answers6" value="Tuesday">
+						Tuesday</label>
+						<label for="Wednesday" id="answer61">
+						<input type="radio" id="Wednesday" name="answers6" value="Wednesday">
+						Wednesday</label>
+						<label for="Thursday" id="answer62">
+						<input type="radio" id="Thursday" name="answers6" value="Thursday">
+						Thursday</label>
+						<label for="Sunday" id="answer63">
+						<input type="radio" id="Sunday" name="answers6" value="Sunday">
+						Sunday</label>
+						<input type="button" name="enter" value="Enter" onclick="getArrayValues(this.form.answers6,answer[5],6);">
+				</div>
+			</div>	
+				
+			<div class="card">
+				<span id="question7">7. What is the name given to a group of HORSES?</span>
+				<br>
+				<div class="answers" id="answers7">
+						<label for="husk" id="answer70">
+						<input type="radio" id="husk" name="answers7" value="husk">
+						husk</label>
+						<label for="harras" id="answer71">
+						<input type="radio" id="harras" name="answers7" value="harras">
+						harras</label>
+						<label for="mute" id="answer72">
+						<input type="radio" id="mute" name="answers7" value="mute">
+						mute</label>
+						<label for="rush" id="answer73">
+						<input type="radio" id="rush" name="answers7" value="rush">
+						rush</label>
+						<input type="button" name="enter" value="Enter" onclick="getArrayValues(this.form.answers7,answer[6],7);">
+				</div>			
+			</div>	
+				
+			<div class="card">
+				<span id="question8">8. Which word is opposite in meaning to the word in capitals? FREQUENT</span>
+				<br>
+				<div class="answers" id="answers8">
+						<label for="glow" id="answer80">
+						<input type="radio" id="glow" name="answers8" value="glow">
+						glow</label>
+						<label for="restrain" id="answer81">
+						<input type="radio" id="restrain" name="answers8" value="restrain">
+						restrain</label>
+						<label for="avoid" id="answer82">
+						<input type="radio" id="avoid" name="answers8" value="avoid">
+						avoid</label>
+						<label for="discard" id="answer83">
+						<input type="radio" id="discard" name="answers8" value="discard">
+						discard</label>
+						<input type="button" name="enter" value="Enter" onclick="getArrayValues(this.form.answers8,answer[7],8);">
+				</div>			
+			</div>	
+				
+			<div class="card">
+				<span id="question9">9. Which is the odd one out? CLAVICHORD, HARPSICHORD, CLARION, ACCORDION</span>
+				<br>
+				<div class="answers" id="answers9">
+						<label for="clavichord" id="answer90">
+						<input type="radio" id="clavichord" name="answers9" value="clavichord">
+						clavichord</label>
+						<label for="harpsichord" id="answer91">
+						<input type="radio" id="harpsichord" name="answers9" value="harpsichord">
+						harpsichord</label>
+						<label for="clarion" id="answer92">
+						<input type="radio" id="clarion" name="answers9" value="clarion">
+						clarion</label>
+						<label for="accordion" id="answer93">
+						<input type="radio" id="accordion" name="answers9" value="accordion">
+						accordion</label>
+						<input type="button" name="enter" value="Enter" onclick="getArrayValues(this.form.answers9,answer[8],9);">
+				</div>			
+			</div>	
+				
+			<div class="card">
+				<span id="question10">10. What is the name given to a group of BUTLERS?</span>
+				<br>
+				<div class="answers" id="answers10">
+						<label for="blast" id="answer100">
+						<input type="radio" id="blast" name="answers10" value="blast">
+						blast</label>
+						<label for="host" id="answer101">
+						<input type="radio" id="host" name="answers10" value="host">
+						host</label>
+						<label for="draught" id="answer102">
+						<input type="radio" id="draught" name="answers10" value="draught">
+						draught</label>
+						<label for="staff" id="answer103">
+						<input type="radio" id="staff" name="answers10" value="staff">
+						staff</label>
+						<input type="button" name="enter" value="Enter" onclick="getArrayValues(this.form.answers10,answer[9],10);">
+				</div>
+			</div>	
+				
+			<input type="button" class="strtFinBtn" id ="Finish" name="Finish"	value="Finish" onclick="getFinishTime(finishTime);clearTimeout(over);document.getElementById('popup').style.display = 'block';">
+			<br><br><br>				
+		</form>
+		<span id="correctAswers"></span>
+		<p id="ten-countdown"></p>
+		<div class="popup" id="popup">
+				<span id="close" onclick= "document.getElementById('popup').style.display = 'none';">x</span>
+				<div class="popupContent">
+					<h2 class="popupContentHead">Good Job!</h2>
+					<span class="popupContentEach" >Your Score:</span>
+					<span class="popupContentEach" id="score"></span>
+					<span class="popupContentEach" id="finishTime"></span>
+				</div>
+		</div>	
+		<div class="developer-bar">
+			<a href="page-editor-student-3.html"><p>&#169; <span style="text-decoration: underline;">Developer</span></p></a>
+		</div>
+	<script>
+		let score=0;//variable for the score
+		const answer = ["24","5/8","25","5","48 mph","Wednesday","harras","avoid","clarion","draught"];//answers
+		let finishTime="none";//variable for the fisnish time
+		let over;// variable for the time out event
+		
+		function disableRadio(){ // function to disable all radio buttons
+			for(let i=1;i<11;i++){
+				for(let j=0;j<document.getElementsByName("answers"+i).length;j++){
+					document.getElementsByName("answers"+i)[j].disabled=true;
+				}
+			}
+		}
+	
+		function getArrayValues(radioArray,answer,j){ // function to get the answer and change the colour
+			for(let i=0;i<radioArray.length;i++){
+				if(radioArray[i].checked){
+					if(radioArray[i].value==answer){
+						document.getElementById("answer"+j+i).classList.add("correct");
+						score +=1;
+						document.getElementById("correctAswers").style.display="block";
+						document.getElementById("correctAswers").innerHTML="Current Score: "+score*10;
+						document.getElementById("correctAswers").style.color="#fffffff7";
+						scoreColour(score);
+						break;
+					}
+					else{
+						document.getElementById("answer"+j+i).classList.add("incorrect");
+						break;
+					}
+				}
+				else{
+					continue;
+				}
+			}
+			for (var i = 0; i < radioArray.length; i++) {
+				if (radioArray[i].checked) {
+					for (var j = 0; j < radioArray.length; j++) {
+						if (i !== j) {
+							radioArray[j].disabled = true;
+						}
+					}
+				break;
+				}
+			}			
+		}
+		
+		function countdown( elementName, minutes, seconds ){ //function for countdown
+			for(let i=1;i<11;i++){
+				for(let j=0;j<document.getElementsByName("answers"+i).length;j++){
+					document.getElementsByName("answers"+i)[j].disabled=false;
+				}
+			}			
+			var element, endTime, hours, mins, msLeft, time;
+			function twoDigits( n ){
+				return (n <= 9 ? "0" + n : n);
+			}
+			function updateTimer(){
+				msLeft = endTime - (+new Date);
+				if ( msLeft < 1000 ) {
+					element.innerHTML = "Time is up!";
+					finishTime= "--:--";
+					alert("Time is up! Click Finish to see your results.");
+					disableRadio();
+				}else {
+					time = new Date( msLeft );
+					hours = time.getUTCHours();
+					mins = time.getUTCMinutes();
+					finishTime=(hours ? hours + ':' + twoDigits( mins ) : mins) + ':' + twoDigits( time.getUTCSeconds() );
+					element.innerHTML = finishTime;
+					over = setTimeout( updateTimer, time.getUTCMilliseconds() + 500 );
+				}
+			}
+			element = document.getElementById( elementName );
+			element.style.display="block";
+			endTime = (+new Date) + 1000 * (60*minutes + seconds) + 500;
+			updateTimer();
+		}
+		
+		function getFinishTime(time){// function to display results in score card
+			document.getElementById("finishTime").innerHTML="Time Remaining: "+time;
+			document.getElementById('score').innerHTML=score*10;
+			document.getElementById("correctAswers").style.display="none";
+			document.getElementById("ten-countdown").style.display="none";
+			disableRadio();
+			document.getElementById("start").disabled=true;
+		}
+		
+		function scoreColour(score){// function to the change colour of the score card
+			if(score<4){
+				document.getElementById('score').classList.add("incorrect");
+			}else{
+				document.getElementById('score').classList.remove("incorrect");
+				document.getElementById('score').classList.add("correct");
+			}
+		}
+		
+		disableRadio();
+		scoreColour(score);
+		document.getElementById("Finish").disabled=true;
+		
+	</script>			
+	</body>
+</html>

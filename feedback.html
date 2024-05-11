@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="button.css">
+    <link rel="stylesheet" href="feedback.css">
+    <script defer src="main.js"></script>
+    <title>Feedback</title>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html"><img src="images/logo.png" alt="logo" class="logo"></a>
+
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="About-Us.html">About</a>
+            <a href="cart.html">Courses</a>
+            <div class="nav-dropdown">
+                <a href="#">Campus</a>
+                <div class="dropdown-content">
+                  <a href="clubs-page.html">Societies</a>
+                  <a href="sportspage.html">Sports</a>
+                  <a href="facilities.html">Facilities</a>
+                  <a href="alumni.html">Alumni</a>
+                  <a href="thumbnail.html">Explore</a>
+                </div>
+            </div>
+            <a href="Quiz-Page.html">Quiz</a>
+            <a class="active" href="feedback.html">Feedback</a>
+            <a href="sitemap.html">Site Map</a>
+        </nav>
+    </header>
+
+    <div class="cover">
+        <img src="images/cover2.png" class="cover-image" alt="cover-image">
+        <div class="cover-text">
+            <p class="cover-title">Feedback</p>
+            <p class="sub-text">Share Your Experience Today and Help Us Improve!</p>
+        </div>
+    </div>
+
+    <form id="commentForm" action="mailto:minoshanj@gmail.com" method="post" enctype="multipart/form-data">
+        <div class="comment-container">
+            <div class="question">
+                <p><span style="margin-right: 10px;">01&#46;</span>How satisfied were you with our website today&#63; &#40;Scale&#58; 1 &#8211; 10, with 10 being extremely satisfied&#41;</p>
+            </div>
+
+            <div class="answer">
+                <div class="rating-container">
+                    <div class="rating-option">
+                        <input type="radio" name="rating" id="rating1" value="1">
+                        <label for="rating1" class="rate-number">1</label>
+                    </div>
+
+                    <div class="rating-option">
+                        <input type="radio" name="rating" id="rating2" value="2">
+                        <label for="rating2" class="rate-number">2</label>
+                    </div>
+
+                    <div class="rating-option">
+                        <input type="radio" name="rating" id="rating3" value="3">
+                        <label for="rating3" class="rate-number">3</label>
+                    </div>
+
+                    <div class="rating-option">
+                        <input type="radio" name="rating" id="rating4" value="4">
+                        <label for="rating4" class="rate-number">4</label>
+                    </div>
+
+                    <div class="rating-option">
+                        <input type="radio" name="rating" id="rating5" value="5">
+                        <label for="rating5" class="rate-number">5</label>
+                    </div>
+
+                    <div class="rating-option">
+                        <input type="radio" name="rating" id="rating6" value="6">
+                        <label for="rating6" class="rate-number">6</label>
+                    </div>
+
+                    <div class="rating-option">
+                        <input type="radio" name="rating" id="rating7" value="7">
+                        <label for="rating7" class="rate-number">7</label>
+                    </div>
+
+                    <div class="rating-option">
+                        <input type="radio" name="rating" id="rating8" value="8">
+                        <label for="rating8" class="rate-number">8</label>
+                    </div>
+
+                    <div class="rating-option">
+                        <input type="radio" name="rating" id="rating9" value="9">
+                        <label for="rating9" class="rate-number">9</label>
+                    </div>
+
+                    <div class="rating-option">
+                        <input type="radio" name="rating" id="rating10" value="10">
+                        <label for="rating10" class="rate-number">10</label>
+                    </div>
+                </div>                
+            </div>
+            <div class="error-message" id="ratingError"><img src="images/cancel.svg" alt="cancel">Please select a rating.</div>
+        </div>
+
+
+        <div class="comment-container">
+            <div class="question">
+                <p><span style="margin-right: 10px;">02&#46;</span>Please could you tell us your reasons for giving us this rating&#63;</p>
+            </div>
+
+            <div class="answer"> 
+                <label for="reason"></label>
+                <textarea id="reason" class="reason" name="reason" rows="5" cols="50" placeholder="Share your thoughts here..."></textarea>            
+            </div>
+            <div class="error-message" id="reasonError"><img src="images/cancel.svg" alt="cancel">Please provide your reasons for the rating.</div>
+        </div>
+
+
+        <div class="comment-container">
+            <div class="question">
+                <p><span style="margin-right: 10px;">03&#46;</span>How likely are you to recommend our website to others&#63; &#40;Scale&#58; 1 &#8211; 10, with 10 being extremely satisfied&#41;</p>
+            </div>
+            
+            <div class="answer">
+                <div class="rating-container">
+                    <div class="rating-option">
+                        <input type="radio" name="reccomend" id="reccomend1" value="1">
+                        <label for="reccomend1" class="rate-number">1</label>
+                    </div>
+
+                    <div class="rating-option">
+                        <input type="radio" name="reccomend" id="reccomend2" value="2">
+                        <label for="reccomend2" class="rate-number">2</label>
+                    </div>
+
+                    <div class="rating-option">
+                        <input type="radio" name="reccomend" id="reccomend3" value="3">
+                        <label for="reccomend3" class="rate-number">3</label>
+                    </div>
+
+                    <div class="rating-option">
+                        <input type="radio" name="reccomend" id="reccomend4" value="4">
+                        <label for="reccomend4" class="rate-number">4</label>
+                    </div>
+
+                    <div class="rating-option">
+                        <input type="radio" name="reccomend" id="reccomend5" value="5">
+                        <label for="reccomend5" class="rate-number">5</label>
+                    </div>
+
+                    <div class="rating-option">
+                        <input type="radio" name="reccomend" id="reccomend6" value="6">
+                        <label for="reccomend6" class="rate-number">6</label>
+                    </div>
+
+                    <div class="rating-option">
+                        <input type="radio" name="reccomend" id="reccomend7" value="7">
+                        <label for="reccomend7" class="rate-number">7</label>
+                    </div>
+
+                    <div class="rating-option">
+                        <input type="radio" name="reccomend" id="reccomend8" value="8">
+                        <label for="reccomend8" class="rate-number">8</label>
+                    </div>
+
+                    <div class="rating-option">
+                        <input type="radio" name="reccomend" id="reccomend9" value="9">
+                        <label for="reccomend9" class="rate-number">9</label>
+                    </div>
+
+                    <div class="rating-option">
+                        <input type="radio" name="reccomend" id="reccomend10" value="10">
+                        <label for="reccomend10" class="rate-number">10</label>
+                    </div>
+                </div>                
+            </div>
+            <div class="error-message" id="reccomendError"><img src="images/cancel.svg" alt="cancel">Please select a rating.</div>
+        </div>
+
+
+        <div class="comment-container">
+            <div class="question">
+                <p><span style="margin-right: 10px;">04&#46;</span>Did you receive the information you were seeking during your visit&#63; If not, what additional content would you like to see&#63; &#40;Optional&#41;</p>
+            </div>
+
+            <div class="answer"> 
+                <label for="visit"></label>
+                <textarea id="visit" class="reason" name="visit" rows="5" cols="50" placeholder="Please include any relevant ideas..."></textarea>            
+            </div>
+        </div>
+
+
+        <div class="comment-container">
+            <div class="question">
+                <p><span style="margin-right: 10px;">03&#46;</span>How did you want to complete this task today&#63; &#40;Optional&#41;</p>
+            </div>
+
+            <div class="answer">
+                <label for="preference"></label> 
+                <select id="preference" name="preference" class="options">
+                    <option value="">Please Select</option>
+                    <option value="Phone">Phone</option>
+                    <option value="Website">Website</option>
+                    <option value="Webchat">Webchat</option>
+                    <option value="Social-media">Social Media</option>
+                    <option value="Email">Email</option>
+                </select>               
+            </div>
+        </div>
+
+        <div class="button-container">
+            <input class="button-m" type="submit" name="send" value="Send" onclick="validateForm(event)">
+            <input class="button-m" type="reset" value="Reset" onclick="scrollToTop()">
+        </div>
+
+        <div class="popup" id="popup">
+            <h1>Thank You</h1>
+            <p>You are helping us create a better website</p>
+            <a href="index.html" class="button-m" onclick="closePopup()">Okay</a>
+        </div>
+    
+        <div class="overlay" id="overlay"></div>
+    </form>
+
+    <div class="developer-bar">
+        <a href="pageEditor.html"><p>&#169; <span style="text-decoration: underline;">Developer</span></p></a>
+    </div>
+</body>
+</html>

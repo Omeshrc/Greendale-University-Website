@@ -1,0 +1,79 @@
+/* colors */
+:root {
+    --color-phthalo-blue: rgb(0, 13, 129);
+    --color-lavender: rgb(210, 218, 239);
+    --color-night: rgb(18, 19, 15);
+    --color-powder-blue: rgb(164, 194, 223);
+    --color-white: rgba(255, 255, 255, 0.969);
+}
+
+.header{background-color:#FEFFFE;}
+
+p{
+	text-align:justify;
+}
+body {
+  background-image: url('images/about us bg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+.para{
+	font-size:17px;
+	line-height:1.5;
+	margin:3% auto;
+	width:90%;
+	background-color:var(--color-powder-blue);
+	padding:3%;
+	color:var(--color-night);
+}
+.para h1{
+	padding-top:3%;
+	padding-right:3%;
+	padding-bottom:3%;
+}
+.para p{
+	padding-top:2%;
+	padding-right:2%;
+	padding-bottom:2%;
+}
+#profiles{
+	height:550px;
+	background-color:#FEFFFE;
+}
+#profiles h1{
+	margin:3%;
+	padding-top:2%;
+	color:var(--color-night);
+}
+.card{
+	display:inline;
+	float:left;
+	margin-left:3.75%;
+	margin-right:0;
+	width:265px;
+}
+.card-content{
+	display:none;
+	text-align:center;
+}
+.card-title{
+	font-size:25px;
+	padding: 2%;
+	margin:1%;
+	color:var(--color-night);
+}
+.card-description {
+	font-size:16px;
+	text-align:center;
+	color:var(--color-night);
+}
+#noElements{
+	background-color:transparent;
+	width:100%;
+	height:400px;
+}
+.developer-bar p{ /*changing main css properties to fix errors*/
+	padding-left:50%;	
+}

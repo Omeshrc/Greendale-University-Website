@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="checkOut.css">
+
+    <script defer src="main.js"></script>
+    <title>Checkout Page</title>
+
+</head>
+<body>
+    <header class="header">
+        <a href="index.html"><img src="images/logo.png" alt="logo" class="logo"></a>
+
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="About-Us.html">About</a>
+            <a class="active" href="cart.html">Courses</a>
+            <div class="nav-dropdown">
+                <a href="#">Campus</a>
+                <div class="dropdown-content">
+                  <a href="clubs-page.html">Societies</a>
+                  <a href="sportspage.html">Sports</a>
+                  <a href="facilities.html">Facilities</a>
+                  <a href="alumni.html">Alumni</a>
+                  <a href="thumbnail.html">Explore</a>
+                </div>
+            </div>
+            <a href="Quiz-Page.html">Quiz</a>
+            <a href="feedback.html">Feedback</a>
+            <a href="sitemap.html">Site Map</a>
+        </nav>
+    </header>
+  <h2 id = "bktop">Customer Details Checkout Page</h2>
+  <br><br>
+
+    <div class = "order">
+        <fieldset class = "fieldset1" id = "purchaseForm">
+        <form method="post">
+        <div class = "summary">
+            <legend>Order Summary<br><p>&ensp;* Indicates a required field</p></legend>      
+            <!-- Having the customer fill a form -->
+            <br>
+
+            <label for="customerNameInput" class = "labelAlignLeft"> Customer's Name: </label>
+            <input type="text" id="customerNameInput" name="customerName" placeholder="Customer Name" size = "30" required readonly>
+            <br><br>
+            <label  for="grandTotalInput" class = "labelAlignLeft"> Grand Total (LKR): </label>
+            <input type="text" id="grandTotalInput" name="grandTotal" placeholder="Grand Total" size = "30" required readonly>
+            <br><br>
+            <input type="checkbox" id="tAndC" name="tAndC" required>
+            <label for="tAndC"> I agree to the <a href="#terms" onclick="showPopupTC()"><u>Terms and Conditions</u></a> that apply. *</label>
+
+        </div>
+        </fieldset>
+    </div>
+
+    <div class = "order2">
+        <fieldset class = "fieldset2">
+            <div class="payment-details">
+            <legend>Payment Details<br><p>&ensp;* Indicates a required field</p></legend>      
+            <br>
+            <!-- According to specific input types, the format validation will take place automatically as the user fills the form -->
+            <label for="cardNumber">Card Number: *</label>
+            <input type="text" name="cardNumber" id="cardNumber" title="Please enter your Card Number" pattern="[0-9]{12}" placeholder="012345678912" size="30" maxlength="12" required>
+
+            <label class="labelAlignLeft" style="padding-left: 20px;" for="name">Card Holder's Name: *</label>
+            <input type="name" id="name" name="name"  title="Please enter your name" placeholder="John Lennon" size="30" required>
+            <br><br><br>
+
+            <label for="date">Date (MM/YYYY): *</label>
+            <input type="text" id="date" name="date" pattern="(0[1-9]|1[0-2])\/\d{2}" title="Please enter a date in the format MM/YYYY (e.g., 03/25)" maxlength="5" placeholder="03/25" size="10" required>      
+
+            <label class="labelAlignLeft" for="code" style="padding-left: 173px;" >Security Code: *</label>
+            <input type="password" minlength="3" maxlength="3" name = "code"  title="Please enter the 3 digit PIN at the back of your card" id = "code" placeholder="***" required>
+            <br><br><br>
+            <hr style="width: 1050px;">
+            <br><br>
+
+                <fieldset class="fieldset3">
+                    <legend>Billing Address<br><p>&ensp;* Indicates a required field</p></legend>      
+                    
+                    <label class="labelAlignLeft" for="address1">Address 1: *</label>
+                    <input type="text" id="address1" name="address1" required>
+              
+                    <label class="labelAlignLeft" style="padding-left: 30px;" for="address2">Address 2:</label>
+                    <input type="text" id="address2" name="address2">
+                    <br><br><br>
+              
+                    <label class="labelAlignLeft" for="townCity">Town/City: *</label>
+                    <input type="text" id="townCity" name="townCity" required>
+              
+                    <label class="labelAlignLeft" style="padding-left: 30px;" for="stateRegion">State/Region: *</label>
+                    <input type="text" id="stateRegion" name="stateRegion" required>
+                    <br><br><br>
+              
+                    <label class="labelAlignLeft" for="postCode">Post Code/Zip Code: *</label>
+                    <input type="text" id="postCode" name="postCode" required>
+                    <br><br><br>
+              
+                    <label class="labelAlignLeft" for="country">Country: *</label>
+                    <input type="text" id="country" name="country" required>
+                    <br><br><br>
+
+                </fieldset>
+                <!-- Adding a ruler/seperator for visual purposes  -->
+                <hr style="width: 1050px;">
+                <br><br>
+
+            
+                    <fieldset class = "fieldset4">
+                        <legend>Contact Details<br><p>&ensp;* Indicates a required field</p></legend>      
+                        <label class="labelAlignLeft" for="phone">Phone Number (+94):</label>
+                        <input type="tel" id="phone" name="phone" minlength="9" maxlength="9">
+                  
+                        <label class="labelAlignLeft" style="padding-left: 40px;" for="email">Email Address: *</label>
+                        <input type="email" id="email" name="email" required>
+                    <br><br><br>
+                    <hr style="width: 1050px;">
+                    <br><br>
+                    <i>(P.S. - You won't be able to proceed if you haven't filled in all the Required inputs, marked with a *)</i>
+            
+                    </fieldset>
+                
+            <br><br>
+
+            
+            <input type="reset" class="button" style="margin-left: 10px;" name="reset" value="Clear">
+            
+            <a href = "#popupCard"><input type="submit" class="button" value="Submit" id="submitButton" style="margin-left: 900px;" disabled></a>
+            
+    </div>
+    </form>
+
+    <!-- Terms and Conditions pop-up card -->
+    <div class="popup" id="popupTC">
+    <div class="popup-content">
+          <h2 id = "terms">Terms and Conditions</h2>
+          <p><br>
+            Please read these terms and conditions carefully before making any payment to the institution ("Institution"). By proceeding with the payment, you agree to be bound by these terms and conditions.<br>
+            <br>
+            1) Payment Obligations:<br>
+            1.1. By making a payment to the Institution, you agree to fulfill your financial obligations promptly and in full accordance with the payment details provided.<br>
+            1.2. You understand and acknowledge that failure to make payment as required may result in consequences, including but not limited to late fees, service disruptions, or cancellation of services.<br>
+            <br>
+            2) Payment Methods:<br>
+            2.1. The Institution may offer various payment methods, such as credit cards, debit cards, electronic funds transfer, or any other method specified by the Institution.<br>
+            2.2. You agree to provide accurate and valid payment information when making a payment, and you authorize the Institution to charge the designated payment method for the amount due.<br>
+            <br>
+            3) Payment Processing:<br>
+            3.1. The Institution will process your payment promptly, but the exact processing time may vary depending on the chosen payment method and external factors beyond the Institution's control.<br>
+            3.2. You acknowledge that certain payment methods may involve additional fees or charges, such as transaction fees or currency conversion fees. You are solely responsible for any such fees.<br>
+            <br>
+            4) Refunds and Cancellations:<br>
+            4.1. Refunds or cancellations of payments made to the Institution will be handled in accordance with the Institution's refund policy, which may vary depending on the specific circumstances and services involved.<br>
+            4.2. It is your responsibility to familiarize yourself with the Institution's refund policy before making any payment. The Institution reserves the right to deny or limit refunds or cancellations at its sole discretion.<br>
+            <br>
+            5) Security:<br>
+            5.1. The Institution takes reasonable measures to ensure the security of your payment information. However, you acknowledge that no online transaction is entirely secure, and the Institution cannot guarantee absolute security.<br>
+            5.2. You agree to take appropriate precautions to protect your personal and payment information, such as using secure networks, maintaining strong passwords, and promptly notifying the Institution of any suspected unauthorized activity.<br>
+            <br>
+            6) Privacy:<br>
+            6.1. The Institution will handle your personal and payment information in accordance with applicable privacy laws and its privacy policy.<br>
+            6.2. By making a payment, you consent to the Institution collecting, using, storing, and disclosing your personal information for the purpose of payment processing and related activities.<br>
+            <br>
+            7) Modifications:<br>
+            7.1. The Institution reserves the right to modify or update these terms and conditions at any time, with or without prior notice.<br>
+            7.2. It is your responsibility to review the most current version of the terms and conditions before making any payment, as continued use of the payment services constitutes acceptance of any modifications.<br>
+            <br>
+            8) Governing Law and Jurisdiction:<br>
+            8.1. These terms and conditions shall be governed by and construed in accordance with the laws of [Jurisdiction], without regard to its conflict of laws principles.<br>
+            8.2. Any disputes arising out of or in connection with these terms and conditions shall be subject to the exclusive jurisdiction of the courts of [Jurisdiction].<br>
+            <br>
+            By making a payment to the Institution, you acknowledge that you have read, understood, and agreed to these terms and conditions. If you do not agree with any part of these terms and conditions, please refrain from making any payment.<br></p>
+            <button style="margin-top: 15px; margin-left: 400px;" class = "button" onclick="navigateBack()">Okay</button>
+        </div>
+      </div>
+
+    <!-- Pop up card -->
+    <div class="overlay" id="overlay"></div>
+    <div class="popup-card" id="popupCard">
+        <p>Purchase Successful!</p>
+        <button onclick="redirectToHomePage()">Okay</button>
+    </div>  
+
+    
+</fieldset>
+</div>
+<a href = "#bktop"><img src = "images\bktop.jpeg" alt = "backtotop"></a>
+    
+    <div style="padding-bottom: 10px;" class="developer-bar">
+        <a href="pageEditor1.html"><p>&#169; <span style="text-decoration: underline;">Developer</span></p></a>
+    </div>
+  
+  <script>
+
+// Function to open the Terms and Conditions link in a pop-up window
+function showPopupTC() {
+    var popupTC = document.getElementById("popupTC");
+    popupTC.style.display = "flex";
+  }
+
+        // If the terms and conditions link is clicked, it will open the pop-up card
+        document.addEventListener("DOMContentLoaded", function() {
+            const termsLink = document.getElementById("termsLink");
+            const termsPopupCard = document.getElementById("termsPopupCard");
+
+            termsLink.addEventListener("click", function(event) {
+                event.preventDefault();
+                termsPopupCard.style.display = "block";
+            });
+        });
+
+        // If the okay button is pressed, navigate back to the Check out page
+        function navigateBack() {
+            window.location.href = 'checkOut.html';
+        }
+
+
+        function showForm() {
+            document.getElementById("myForm2").classList.add("show-form");
+        }
+
+        // Function to check if all required fields are filled and enable/disable the "Submit" button
+        function checkFormValidity() {
+            const form = document.getElementById("purchaseForm");
+            const submitButton = document.getElementById("submitButton");
+            const requiredInputs = form.querySelectorAll("input[required]");
+            let isFormValid = true;
+
+            requiredInputs.forEach(input => {
+                if (!input.validity.valid) {
+                    isFormValid = false;
+                }
+            });
+
+            submitButton.disabled = !isFormValid;
+        }
+
+        // Add event listeners to the form inputs
+        document.getElementById("cardNumber").addEventListener("input", checkFormValidity);
+        document.getElementById("name").addEventListener("input", checkFormValidity);
+        document.getElementById("date").addEventListener("input", checkFormValidity);
+        document.getElementById("code").addEventListener("input", checkFormValidity);
+        document.getElementById("tAndC").addEventListener("input", checkFormValidity);
+
+        // Call the function to store the form fields when the page loads
+        window.onload = function () {
+            populateFormFromLocalStorage();
+            checkFormValidity(); // Check form validity initially on page load
+        };
+
+
+
+
+        const purchaseForm = document.getElementById('purchaseForm');
+        const submitButton = document.getElementById('submitButton');
+        const popupCard = document.getElementById('popupCard');
+        const overlay = document.getElementById('overlay');
+
+        // Function to show the pop-up card
+        function showPopupCard() {
+        popupCard.style.display = 'block';
+        overlay.style.display = 'block';
+        }
+
+        // Function to redirect to the home page
+        function redirectToHomePage() {
+        window.location.href = 'index.html';
+        }
+
+        // Add an event listener to the form submission
+        purchaseForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Show the pop-up card when the form is submitted
+        showPopupCard();
+        });
+
+        // Function to retrieve and populate form fields from Local Storage
+        function populateFormFromLocalStorage() {
+        // Get the customer name and grand total from Local Storage
+        var customerName = localStorage.getItem("customerName");
+        var grandTotal = localStorage.getItem("grandTotal");
+
+        // Check if the data exists in Local Storage
+        if (customerName && grandTotal) {
+        // Populate the form fields with the stored data
+        document.getElementById("customerNameInput").value = customerName;
+        document.getElementById("grandTotalInput").value = grandTotal;
+        }
+        }
+
+        // Call the function to populate the form fields when the page loads
+        window.onload = populateFormFromLocalStorage;
+
+           
+  </script>
+</body>
+</html>

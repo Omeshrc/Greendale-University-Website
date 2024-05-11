@@ -1,0 +1,168 @@
+/* colors */
+:root {
+    --color-phthalo-blue: rgb(0, 13, 129);
+    --color-lavender: rgb(210, 218, 239);
+    --color-night: rgb(18, 19, 15);
+    --color-powder-blue: rgb(164, 194, 223);
+    --color-white: rgba(255, 255, 255, 0.969);
+}
+
+h1 {
+    padding-bottom: 20px;
+    font-size: 40px;
+}
+
+.side-navbar {
+    z-index: 10;
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    background-color: rgb(0, 13, 129, 0.8);
+    padding: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.side-navbar a {
+    font-size: 20px;
+    font-weight: lighter;
+    display: block;
+    margin-bottom: 16px;
+    text-decoration: none;
+    color: var(--color-white);
+    position: relative;
+}
+
+.side-navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    border-radius: 5px;
+    background-color: var(--color-lavender);
+    transition: 0.3s;
+}
+
+.side-navbar a.active::before,
+.side-navbar a:hover::before {
+    width: 100%;
+}
+
+.fac-img-container {
+    position: relative;
+    width: 100%;
+}
+
+.fac-image {
+    width: 100%;
+    height: 60%;
+}
+
+.fac-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 1));
+}
+
+.fac-text {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-white);
+    text-align: center;
+    font-size: 48px;
+}
+
+.fac-des-container {
+    position: relative;
+    width: 80%;
+    margin: 40px auto; /* center the about-us */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.fac-des-container:hover {
+    transform: translateY(-5px);
+    /* transform: scale(1.05);  */
+}
+
+.fac-des {
+    text-align: justify;
+    display: block;
+    margin: 70px 170px;
+    line-height: 1.5;
+}
+
+.art-container {
+    display: flex;
+    width: 90%;
+    margin: 40px auto; /* center the about-us */
+    background-color: var(--color-white);
+    padding: 60px 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.art-container:hover {
+    transform: translateY(-5px);
+}
+
+.art-img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    object-fit: cover; /* maintain aspect ratio */
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+}
+
+.image-text {
+    position: absolute;
+    top: 67%;
+    left: 15px;
+    right: 0px;
+    padding-left: 40px;
+    text-align: left;
+    font-size: 24px;
+    color: var(--color-white);
+}
+
+.image-text p {
+    position: absolute;
+    top: 65%;
+    margin: 20px 0;
+    text-align: left;
+    font-size: 16px;
+    color: var(--color-white);
+    opacity: 0.8;
+}
+
+.art {
+    position: relative;
+    width: 30%;
+    margin: 30px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.art:hover {
+    transform: translateY(-5px);
+}

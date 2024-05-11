@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Courses Cart</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="cart.css">
+
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html"><img src="images/logo.png" alt="logo" class="logo"></a>
+
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="About-Us.html">About</a>
+        <a class="active" href="cart.html">Courses</a>
+        <div class="nav-dropdown">
+            <a href="#">Campus</a>
+            <div class="dropdown-content">
+              <a href="clubs-page.html">Societies</a>
+              <a href="sportspage.html">Sports</a>
+              <a href="facilities.html">Facilities</a>
+              <a href="alumni.html">Alumni</a>
+              <a href="thumbnail.html">Explore</a>
+            </div>
+        </div>
+        <a href="Quiz-Page.html">Quiz</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="sitemap.html">Site Map</a>
+    </nav>
+</header>
+    
+  <div class="product-container" id = "bktop">
+    <h1>Online Courses Cart </h1>
+    <br>
+
+  </div>
+  <!-- Have a div card for each product displayed -->
+  <div class = "product-container">
+    <div class = "lift">
+        <div class="product" id="product1">
+            <img src="images/python_bg.jpg" alt="python_bg" />
+            <p id="productDescription">Python Programming Language Rs. 3000/-</p>
+            <div class="count-container">
+              <!-- A counter to add mulitple/remove mulitple items from cart -->
+              <button style="padding: 0px 10px;" class="temp" onclick="decrementCount(this)">-</button>
+              <span>0</span>
+              <button  class="temp" onclick="incrementCount(this)">+</button>
+              </div>
+        </div>
+    </div>
+
+    <div class = "lift">
+        <div class="product" id="product2">
+            <img src="images/java_bg.jpg" alt="java_bg" />
+            <p id="productDescription">Java Programming Language Rs. 5000/-</p>
+            <div class="count-container">
+            <button style="padding: 0px 10px;" class="temp" onclick="decrementCount(this)">-</button>
+            <span>0</span>
+            <button  class="temp" onclick="incrementCount(this)">+</button>
+            </div>
+        </div>
+    </div>
+
+    <div class = "lift">
+        <div class="product" id="product3">
+            <img src="Images/coding_bg.jpg" alt="phpsql" />
+            <p id="productDescription"> Coding Fundamentals (Free)</p>
+            <div class="count-container">
+              <button style="padding: 0px 10px;" class="temp" onclick="decrementCount(this)">-</button>
+              <span>0</span>
+              <button  class="temp" onclick="incrementCount(this)">+</button>
+              </div>
+        </div>
+    </div>
+
+    <div class = "lift">
+        <div class="product" id="product4">
+            <img src="Images/arduino.jpeg" alt="arduino" />
+            <p id="productDescription">IoT & Arduino Rs. 1500/-</p>
+            <div class="count-container">
+              <button style="padding: 0px 10px;" class="temp" onclick="decrementCount(this)">-</button>
+              <span>0</span>
+              <button  class="temp" onclick="incrementCount(this)">+</button>
+              </div>
+        </div>
+    </div>
+
+    <div class = "lift">
+        <div class="product" id="product5">
+            <img src="Images/webd.jpg" alt="webd" />
+            <p id="productDescription">Web Design and Development Rs. 2500/-</p>
+            <div class="count-container">
+              <button style="padding: 0px 10px;" class="temp" onclick="decrementCount(this)">-</button>
+              <span>0</span>
+              <button  class="temp" onclick="incrementCount(this)">+</button>
+              </div>
+        </div>
+    </div>
+
+    <div class = "lift">
+        <div class="product" id="product6">
+            <img src="Images/android.jpeg" alt="android" />
+            <p id="productDescription">Android Development Rs. 6000/-</p>
+            <div class="count-container">
+              <button style="padding: 0px 10px;" class="temp" onclick="decrementCount(this)">-</button>
+              <span>0</span>
+              <button  class="temp" onclick="incrementCount(this)">+</button>
+              </div>
+        </div>
+    </div>
+</div>
+
+  <div class="notification" id="notification">
+    Product added to cart! (If more than one item is purchased, it will be valid for the next session as well!)
+  </div>
+
+  <div class = "notification1" id = "notification1">
+    You cannot proceed without a purchase!
+  </div>
+
+  <!-- The Shopping cart to take name and products with total -->
+  <div class="shopping-cart-container">
+    
+    <img src = "Images/cart.gif">
+    <div class="shopping-cart" id="shopping-cart">
+        <h4 style="text-align: center;"> <u> Your Shopping Cart</u> </h4> <br>
+        
+    <div class = "personalDetails">
+        <form>
+            <fieldset>
+                <legend> &nbsp; Customer Details &nbsp; </legend>
+                    <label for = "Name"> Name: </label>
+                    <input type = "text" id = "Name" name = "Name" placeholder= "John Lennon" title="Please enter your name" maxlength = "20" size = "30" >
+                    <br>
+            </fieldset>
+        </form>
+        <br>
+      
+      <div id="cart-content"></div>
+      <!-- Format to have it printed like a receipt -->
+      <p>______________________________________</p>
+      <p>Count: <span id="total-items">0</span></p>
+      <p>______________________________________</p>
+      <p>Grand Total: Rs. <span id="grand-total">0</span>/-</p>
+      <p>______________________________________</p>
+      <br>
+      <button class = "button" onclick="clearCart()">Clear Cart</button> &ensp;
+      <button class = "button" onclick="proceedToBilling()">Proceed to Billing</button>
+    </div>
+    </div><br>
+    <b style="padding-left: 38px;"><i>(*Fee is for 4 sessions*)</i></b>
+  </div>
+
+  <a href = "#bktop"><img src = "images\bktop.jpeg" alt = "backtotop"></a>
+
+  <div class="developer-bar">
+    <a href="pageEditor1.html"><p>&#169; <span style="text-decoration: underline;">Developer</span></p></a>
+  </div>
+
+  <script>
+
+    var cartItems = [];
+
+    // Checks if the span button has been used, if yes 'nodeName' will present a value of "SPAN"
+    function incrementCount(button) {
+        var parent = button.parentNode;
+        var counter = null;
+
+        // Loop through the child nodes of the parent to find the <span> element
+        for (var i = 0; i < parent.childNodes.length; i++) {
+            var child = parent.childNodes[i];
+            if (child.nodeName === "SPAN") {
+            counter = child;
+            break;
+            }
+        }
+
+        // If a <span> element was found, update the counter
+        if (counter !== null) {
+          // Parses the textContent to integer with the base of 10 (decimal format)
+            var count = parseInt(counter.textContent, 10);
+            count++;
+            counter.textContent = count;
+            
+            addingToCart(button);
+            showAddedNotification();
+
+        }
+    }
+
+    function decrementCount(button) {
+      // If span has been used
+        const countElement = button.parentNode.querySelector("span");
+        let count = parseInt(countElement.textContent, 10);
+
+        if (count > 0) {
+          // will never go less than -1
+            count--;
+            countElement.textContent = count;
+            addingToCart(button);
+            
+            showRemovedNotification(productDescription);
+
+            if (count === 0) {
+            const productDiv = findProductDiv(button);
+            const productDescription = findproductDescription(productDiv);
+            const existingCartItemIndex = findCartItemIndex(productDescription);
+            
+            // If the counter is > 0, to decrease the counter by 1
+            if (existingCartItemIndex !== -1) {
+                cartItems.splice(existingCartItemIndex, 1);
+                showRemovedNotification(productDescription);
+            }
+            }
+        }
+        }
+
+        function findProductDiv(button) {
+        let parent = button.parentNode;
+        while (parent && !parent.classList.contains("product")) {
+            parent = parent.parentNode;
+        }
+        return parent;
+        }
+
+        function findproductDescription(productDiv) {
+        return productDiv.querySelector("#productDescription").textContent;
+        }
+
+        function findCartItemIndex(productDescription) {
+        for (let i = 0; i < cartItems.length; i++) {
+            if (cartItems[i].productDescription === productDescription) {
+            return i;
+            }
+        }
+        return -1;
+        }
+
+        function addingToCart(button) {
+            const productDiv = button.closest(".product");
+            // querySelector allows CSS elements to be picked up and used
+            const productDescription = productDiv.querySelector("#productDescription").textContent;
+            const productCount = parseInt(productDiv.querySelector("span").textContent, 10);
+
+            let existingCartItemIndex = -1;
+            for (let i = 0; i < cartItems.length; i++) {
+                if (cartItems[i].productDescription === productDescription) {
+                    existingCartItemIndex = i;
+                    break;
+                }
+            }
+
+            if (existingCartItemIndex !== -1) {
+                cartItems[existingCartItemIndex].quantity = productCount;
+            } else {
+                cartItems.push({ productDescription: productDescription, quantity: productCount });
+            }
+
+            showAddedNotification();
+            updateShoppingCart(); // Call the function to update the shopping cart UI
+        }
+
+
+        function updateShoppingCart() {
+            const cartContent = document.getElementById("cart-content");
+            cartContent.innerHTML = "";
+
+            let grandTotal = 0;
+            let totalItems = 0;
+
+            for (let i = 0; i < cartItems.length; i++) {
+                const item = cartItems[i];
+                const cartItemDiv = document.createElement("div");
+
+                // Create a paragraph element to display product details
+                const productDetails = document.createElement("p");
+                productDetails.textContent = `${item.productDescription} x ${item.quantity} - Rs. ${getProductPrice(item.productDescription) * item.quantity}/-`;
+                cartItemDiv.appendChild(productDetails);
+
+                cartContent.appendChild(cartItemDiv);
+
+                const productPrice = getProductPrice(item.productDescription);
+                grandTotal += item.quantity * productPrice;
+                totalItems += item.quantity;
+            }
+
+            const totalItemsElement = document.getElementById("total-items");
+            totalItemsElement.textContent = totalItems;
+
+            const grandTotalElement = document.getElementById("grand-total");
+            grandTotalElement.textContent = grandTotal;
+        }
+
+        function getProductPrice(description) {
+            // This dummy price lookup function is used to fetch the product price based off it's description
+            // Takes a string parameter and returns the value of the property. If it is not available, print 0
+            const dummyPriceLookup = {
+            "Python Programming Language Rs. 3000/-": 3000,
+            "Java Programming Language Rs. 5000/-": 5000,
+            "Coding Fundamentals (Free)": 0,
+            "IoT & Arduino Rs. 1500/-": 1500,
+            "Web Design and Development Rs. 2500/-": 2500,
+            "Android Development Rs. 6000/-": 6000,
+            };
+
+            return dummyPriceLookup[description] || 0;
+        }
+
+  function calculateTotalItems() {
+    let totalItems = 0;
+    cartItems.forEach((item) => {
+      totalItems += item.quantity;
+    });
+    return totalItems;
+  }
+
+  function clearCart() {
+
+    var countElements = document.querySelectorAll(".count-container span");
+      countElements.forEach((countElement) => {
+        countElement.textContent = "0";
+      });
+
+    cartItems.length = 0;
+    updateShoppingCart();
+    document.getElementById("Name").value = "";
+  }
+
+  function showAddedNotification() {
+    const notification = document.getElementById("notification");
+    notification.textContent = "Product added to cart! (If more than one item is purchased, it will be valid for the next session as well!)";
+    notification.style.display = "block";
+    setTimeout(function () {
+      notification.style.display = "none";
+    }, 3500); // Displaying the notification for 3.5 seconds
+  }
+
+  function showRemovedNotification(productDescription) {
+    const notification = document.getElementById("notification");
+    notification.textContent = `Product removed from cart!`;
+    notification.style.display = "block";
+    setTimeout(function () {
+      notification.style.display = "none";
+    }, 3500); // Displaying the notification for 3.5 seconds
+
+    // Update the shopping cart content after the item is removed
+    updateShoppingCart();
+  }
+
+
+  function proceedToBilling() {
+    // Check if the cart is empty
+    if (cartItems.length === 0) {
+      const notification1 = document.getElementById("notification1");
+      notification1.textContent = "You cannot proceed until you've purchased a product!";
+      notification1.style.display = "block";
+      setTimeout(function () {
+        notification1.style.display = "none";
+      }, 3500); // Display the notification for 3.5 seconds
+    } else {
+      const name = document.getElementById("Name").value.trim(); // Trim any leading or trailing spaces
+
+      // Check if the name is empty
+      if (name === "") {
+        const notification1 = document.getElementById("notification1");
+        notification1.textContent = "Please enter your name before proceeding to checkout.";
+        notification1.style.display = "block";
+        setTimeout(function () {
+          notification1.style.display = "none";
+        }, 3500); // Display the notification for 3.5 seconds
+      } else {
+        const grandTotal = calculateGrandTotal();
+      // Using localStorage object to store in the web-page. It can only be modified through the creation, so it cannot be deleted.
+      // Store the customer name and grand total in Local Storage
+      localStorage.setItem("customerName", name);
+      localStorage.setItem("grandTotal", grandTotal);
+
+      // Redirect to the checkout page
+      const checkoutURL = "checkOut.html";
+      window.location.href = checkoutURL;
+        
+      }
+    }
+  }
+
+    function calculateGrandTotal() {
+        let grandTotal = 0;
+        for (let i = 0; i < cartItems.length; i++) {
+            const item = cartItems[i];
+            const productPrice = getProductPrice(item.productDescription);
+            grandTotal += item.quantity * productPrice;
+        }
+        return grandTotal;
+    }
+
+
+function CheckoutButton() {
+  checkoutButton.onclick = proceedToCheckout;
+  var shoppingCart = document.getElementById("shopping-cart");
+  shoppingCart.appendChild(checkoutButton);
+}
+
+CheckoutButton();
+
+</script>
+</body>
+</html>

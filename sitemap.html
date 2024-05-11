@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sitemap</title>
+  <script defer src="main.js"></script> <!--Created for student 2-->
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap");
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-image: url("cover.jpg");
+      overflow: hidden;
+    
+    }
+    .sitemap { 
+      width: 100%;
+      height: 400px;
+      margin-top: 4vh; 
+      opacity: 80%;
+      align-self: center;
+    }
+    .point {
+      fill:rgba(255, 255, 255, 0.969);;
+      cursor: pointer; /* Cursor becomes a ponter*/
+      opacity: 100%;
+    }
+    .point:hover {
+      fill: #2e2e2e;
+    }
+
+    .point text{
+      fill: black;
+      font-size: 18px;
+    }
+
+    .point:hover text {
+      fill: white;
+    
+    }
+    h1 {
+      text-align: left;
+      margin-top: 20vh; 
+      font-size: 60px;
+      top: -10px;
+      color: #fefffe;
+      font-weight: lighter;
+      background-color: unset;
+      margin-left: 100px;
+    }
+    footer {
+      background-color: rgb(18, 19, 15);
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      margin-top: auto; /* Positioning the footer with respect to the top margin of the page*/
+    }
+    footer a {
+      color: white;
+      background-color: unset;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a href="index.html"><img src="images/logo.png" alt="logo" class="logo"></a>
+
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="About-Us.html">About</a>
+        <a href="cart.html">Courses</a>
+        <div class="nav-dropdown">
+            <a href="#">Campus</a>
+            <div class="dropdown-content">
+              <a href="clubs-page.html">Societies</a>
+              <a href="sportspage.html">Sports</a>
+              <a href="facilities.html">Facilities</a>
+              <a href="alumni.html">Alumni</a>
+              <a href="thumbnail.html">Explore</a>
+            </div>
+        </div>
+        <a href="Quiz-Page.html">Quiz</a>
+        <a href="feedback.html">Feedback</a>
+        <a class="active" href="sitemap.html">Site Map</a>
+    </nav>
+</header>
+
+  <h1>Site Map</h1>
+  
+
+  <svg class="sitemap">
+
+
+    <line x1="50%" y1="50%" x2="50%" y2="350" stroke="black" />  <!-- Lines interconnecting circle shapes --> 
+    <line x1="25" y1="300" x2="300" y2="300" stroke="black" />
+    <line x1="150" y1="300" x2="325" y2="300" stroke="black" />
+    <line x1="325" y1="300" x2="500" y2="300" stroke="black" />
+    <line x1="500" y1="300" x2="675" y2="300" stroke="black" />
+    <line x1="675" y1="300" x2="850" y2="300" stroke="black" />
+    <line x1="850" y1="300" x2="1025" y2="300" stroke="black" />
+    <line x1="1025" y1="300" x2="1200" y2="300" stroke="black" />
+    <line x1="1200" y1="300" x2="1400" y2="300" stroke="black" />  
+
+    <g class="point" onclick="navigateToPage('index.html')"> <!-- Clickable SVG points using circle shapes --> 
+      <circle cx="50%" cy="120" r="80" />
+      <text x="50%" y="120" dominant-baseline="middle" text-anchor="middle">Home</text>
+    </g>
+
+    <g class="point" onclick="navigateToPage('facilities.html')">
+      <circle cx="5%" cy="300" r="65" />
+      <text x="5%" y="300" dominant-baseline="middle" text-anchor="middle">Facilities</text>
+    </g>
+
+    <g class="point" onclick="navigateToPage('alumni.html')">
+      <circle cx="15%" cy="300" r="65" />
+      <text x="15%" y="300" dominant-baseline="middle" text-anchor="middle">Alumni</text>
+    </g>
+
+    <g class="point" onclick="navigateToPage('sportspage.html')">
+      <circle cx="25%" cy="300" r="65" />
+      <text x="25%" y="300" dominant-baseline="middle" text-anchor="middle">Sports</text>
+    </g>
+
+    <g class="point" onclick="navigateToPage('thumbnail.html')">
+      <circle cx="35%" cy="300" r="65" />
+      <text x="35%" y="300" dominant-baseline="middle" text-anchor="middle">Explore</text>
+    </g>
+
+
+    <g class="point" onclick="navigateToPage('About-Us.html')">
+      <circle cx="50%" cy="300" r="65" />
+      <text x="50%" y="300" dominant-baseline="middle" text-anchor="middle">About</text>
+    </g>
+
+    <g class="point" onclick="navigateToPage('cart.html')">
+      <circle cx="65%" cy="300" r="65" />
+      <text x="65%" y="300" dominant-baseline="middle" text-anchor="middle">Courses</text>
+    </g>
+
+    <g class="point" onclick="navigateToPage('feedback.html')">
+      <circle cx="75%" cy="300" r="65" />
+      <text x="75%" y="300" dominant-baseline="middle" text-anchor="middle">Feedback</text>
+    </g>
+
+    <g class="point" onclick="navigateToPage('Quiz-page.html')">
+      <circle cx="85%" cy="300" r="65" />
+      <text x="85%" y="300" dominant-baseline="middle" text-anchor="middle">Quiz</text>
+    </g>
+    
+
+    <g class="point" onclick="navigateToPage('clubs-page.html')">
+      <circle cx="95%" cy="300" r="65" />
+      <text x="95%" y="300" dominant-baseline="middle" text-anchor="middle">Societies</text>
+    </g>
+
+    
+
+  </svg>
+
+  
+  <footer>&copy; <a href="developer-inoj.html">Developer</a></footer>
+
+  <script>
+    function navigateToPage(url) { /* JS function to direct user to link when user click on desired circle*/
+      window.location.href = url;
+    }
+  </script>
+</body>
+</html>

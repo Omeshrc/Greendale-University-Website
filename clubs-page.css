@@ -1,0 +1,94 @@
+/* colors */
+:root {
+    --color-phthalo-blue: rgb(0, 13, 129);
+    --color-lavender: rgb(210, 218, 239);
+    --color-night: rgb(18, 19, 15);
+    --color-powder-blue: rgb(164, 194, 223);
+    --color-white: rgba(255, 255, 255, 0.969);
+}
+.main{
+	background-color:white;
+	position:relative;
+	margin:3%;
+	margin-top:8%;
+	font-size:17px;
+	line-height:1.5;
+}
+.main h1{
+	padding-top:1%;
+	padding-right:2%;
+	padding-bottom:2%;
+}
+#heading{
+	font-size:40px;
+}
+.main p{
+	text-align:justify;
+}
+.clubs1{
+	margin-bottom:2%;
+	margin-top:2%;
+	display:flex;
+	position:relative;
+	float:right;
+	right:0;
+	background-color:var(--color-powder-blue);
+	width:95%;
+	height:400px;
+	transition: transform 0.5s;
+}
+.clubs1 h1,.clubs2 h1{
+	padding-top:3%;
+	padding-right:3%;
+	padding-bottom:3%;}
+.clubs1:hover {
+    transform: translateY(-10px);
+}
+.club-content{
+	display:flex;
+}
+.club-content img{
+	float:right;
+	right:0;
+	width:400px;
+	height:400px;
+}
+.club-content p {
+	float:left;
+	padding-bottom:1%;
+	margin-left:3%;
+	margin-right:3%;
+}
+.club-content h1{
+	margin-left:3%;
+}
+.clubs2{
+	margin-bottom:2%;
+	margin-top:2%;
+	display:flex;
+	position:relative;
+	float:left;
+	left:0;
+	background-color:var(--color-powder-blue);
+	width:95%;
+	height:400px;
+	transition: transform 0.5s;
+}
+.clubs2:hover {
+    transform: translateY(-10px);
+}
+
+.main a {
+    font-weight: 500;
+    text-decoration: none;
+	color:var(--color-phthalo-blue);	
+}
+.main a:hover{
+	color:var(--color-powder-blue);
+}
+.main a:visited{
+	color:var(--color-night);
+}
+#noElements{
+	height:2300px;
+}					
